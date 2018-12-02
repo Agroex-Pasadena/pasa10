@@ -1,0 +1,10 @@
+(deffacts reviews
+  (review (ID 1)(enfermedad-name "Antracnosis foliar")(enfermedad-id 3)(reviewer "")(comment "")(stars 5))
+  (review (ID 2)(enfermedad-name "Diaetra")(enfermedad-id 4)(reviewer "")(comment "")(stars 3))
+  (review (ID 3)(enfermedad-name "Cercospora")(enfermedad-id 1)(reviewer "")(comment "")(stars 1))
+  (review (ID 1)(enfermedad-name "Antracnosis del tallo")(enfermedad-id 1)(reviewer "")(comment "")(stars 3))
+  (review (ID 2)(enfermedad-name "Pudricion de tallo")(enfermedad-id 2)(reviewer "")(comment "")(stars 3))
+  (review (ID 3)(enfermedad-name "mata joex")(enfermedad-id 4)(reviewer "")(comment "")(stars 1)
+  (review (ID 4)(enfermedad-name "Antracnosis del tallo")(enfermedad-id 1)(reviewer "")(comment "")(stars 5))
+  (review (ID 5)(enfermedad-name "Pudricion de raiz")(enfermedad-id 3)(reviewer "")(comment "")(stars 5))
+  (review (ID 6)(enfermedad-name "Antracnosis del tallo")(enfermedad-id 1)(reviewer "")(comment "")(stars 3)))

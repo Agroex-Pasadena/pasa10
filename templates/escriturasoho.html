@@ -1,0 +1,74 @@
+{% extends "basesoja.html" %}
+{% load staticfiles %}
+
+{% block css-files %}
+  <link rel="stylesheet" href="{% static "css/utilbase.css" %}"/>
+  <link rel="stylesheet" href="{% static "css/analisis.css" %}"/>
+{% endblock %}
+
+{% block content %}
+<!-- FORM -->
+<div id="outer-box" style="display:none;"> <!-- 1 Se le eliminó el style="display:none;" -->
+<div id="analisis-box" class="ui existing segment container grid">
+  <div class="two wide column"></div>
+  <form method="post" id="form-escritura" class="ui form twelve wide column" action="{% url 'escriturasoho' %}"> 
+  	{% csrf_token %}
+
+    <h2 class="ui header">
+      <i class="lightbulb icon"></i>
+      <div class="content">
+        Última regla generada de soja por hoja
+      </div>
+    </h2>
+
+    <div class="ui divider"></div>
+
+    <h4 id="supertitulo" class="ui center aligned header">Nombre: {{ enfermedadsohomaiz.name }} </h4>
+  
+    (enfermedad (ID {{ enfermedadsohomaiz.id }}) (nombre "{{ enfermedadsohomaiz.name }}") (planta "{{ enfermedadsohomaiz.planta }}") (sintoma-aa "{{ enfermedadsohomaiz.sintomaAA }}") (sintoma-bb "{{ enfermedadsohomaiz.sintomaBB }}") (sintoma-cc "{{ enfermedadsohomaiz.sintomaCC }}") (sintoma-dd "{{ enfermedadsohomaiz.sintomaDD }}") (sintoma-ee "{{ enfermedadsohomaiz.sintomaEE }}"))
+
+    <div class="ui divider"></div>
+    <br>
+    <div class="inline fields">
+
+      <div class="field" style="display:none;">
+        <label>Elija la planta</label>
+        <input name="plant" id="plant" placeholder="First Name" type="text">
+      </div>
+
+
+    </div>
+
+ 
+    <!-- Mensaje de error -->
+    <div class="ui error message"></div>
+
+    <!-- Boton enviar -->
+    <div class="inline fields">
+
+	<br>
+        <input type="submit" value="OK" />
+        
+    
+    </div>
+
+  </form>
+ 
+</div>
+
+<div id="notification-box">
+          <div id="the-do-box">
+          </div>
+          <div class="ui blue message" id="the-message">Blue</div>
+        </div>
+
+</div>
+
+
+{% endblock %}
+
+
+{% block js-files %}
+<script src="{% static "js/escriturasoho.js" %}"></script>
+
+{% endblock %}

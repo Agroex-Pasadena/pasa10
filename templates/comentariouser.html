@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="ui container"> 
+
+ <a href="http://agriculture1.newholland.com/lar/es"><img class="ui fluid image" src="/static/images/publicidad2.gif"></a>
+
+  <div id="analisis-box" class="ui segment container grid">
+    <div class="two wide column">
+    </div>
+    <div class="nine wide column">
+      
+      <!-- Comentarios -->
+        <div class="ui comments">
+          <h3 class="ui dividing header">Comentar&nbsp;&nbsp;&nbsp;&nbsp;<i id="review-new-button" class="comment icon link"></i></h3>
+
+          <form id="review-form" class="ui form">  {% csrf_token %}
+            <div class="field">
+              <div class="two fields">
+                <div class="field">
+                  <input type="text" name="review-name" placeholder="Nombre">
+                </div>
+                <div class="field" style="display:none">
+                  <i id="star-1" class="empty star icon link review-star" onclick="clickStar(1)"></i>
+                  <i id="star-2" class="empty star icon link review-star" onclick="clickStar(2)"></i>
+                  <i id="star-3" class="empty star icon link review-star" onclick="clickStar(3)"></i>
+                  <i id="star-4" class="empty star icon link review-star" onclick="clickStar(4)"></i>
+                  <i id="star-5" class="empty star icon link review-star" onclick="clickStar(5)"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Campo comentario -->
+            <div class="field">
+              <input type="text" name="review-stars" style="display:none">
+              <textarea id="review-comment" rows="3" placeholder="Escribe tu comentario"></textarea>
+            </div>
+
+            <!-- Mensaje de error -->
+            <div class="ui error message"></div>
+
+            <!-- Nuevo octubre -->
+            <div id="modal-octubre-comentario" class="ui tiny modal">
+              <i class="close icon"></i>
+              <!-- <div class="header">
+                Comentario enviado
+              </div> -->
+              <div class="image content">
+                <div class="ui small image">
+                  <img src="/static/images/enviado.png">
+                </div>
+                <div class="description">
+                  <div class="ui center aligned header">Comentario enviado</div>
+                  <p>Su comentario es muy importante para nosotros</p>
+                  <p>¡Gracias por ayudarnos a mejorar!</p>
+                </div>
+              </div>
+              
+            </div>
+
+           <!--  Fin nuevo octubre -->
+
+            <!-- Submit button -->
+            <div class="inline fields">
+              <div class="ui submit positive button"> Enviar</div>
+            </div>
+          </form>
+
+        </div>
+
+    </div>
+    
+  </div>
+
+</div>
+{% endblock %}
+
+{% block js-files %}
+  <script src="{% static "js/comentariouser.js" %}"></script>
+  <script>
+    $(window).load(function() {
+      $('.menu .item')
+    .tab();
+    });
+  </script>  
+{% endblock %}
+
